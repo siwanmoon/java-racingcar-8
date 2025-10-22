@@ -1,6 +1,9 @@
 package racingcar.service;
 
+import java.util.List;
+import racingcar.model.Car;
+
 public interface Racing {
 
-    String emulator(String racingcarNames, int racingAttemptNumber);
+    void emulator(List<Car> racingcarNames, int racingAttemptNumber);
 }

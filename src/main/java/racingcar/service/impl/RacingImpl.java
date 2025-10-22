@@ -1,4 +1,4 @@
-package racingcar.service.Impl;
+package racingcar.service.impl;
 
 import java.util.List;
 import racingcar.model.Car;
@@ -7,7 +7,7 @@ import racingcar.service.Racing;
 public class RacingImpl implements Racing {
 
     @Override
-    public String emulator(String racingcarNames, String racingAttemptNumber) {
+    public void emulator(List<Car> racingcarNames, int racingAttemptNumber) {
         ;
     }
 }

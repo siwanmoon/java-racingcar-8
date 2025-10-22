@@ -1,6 +1,10 @@
 package racingcar.controller;
 
+import java.util.List;
+
+import racingcar.model.Car;
 import racingcar.service.Racing;
+import racingcar.util.InputValidator;
 import racingcar.view.Input;
 import racingcar.view.Output;
 
@@ -18,8 +22,15 @@ public class RacingController {
 
     public void run() {
         output.requestRacingcarName();
-        String racingcarNames = input.getInput();
+        String racingcarNameInput = input.getInput();
         output.requestAttemptNumber();
         String racingAttemptNumberString = input.getInput();
+
+        // input의 유효성검사
+        InputValidator inputValidator = new InputValidator();
+        List<Car> racingcarNames = inputValidator.racingcars(racingcarNameInput);
+        int racingAttemptNumber = inputValidator.attemptNumber(racingAttemptNumberString);
+
+        racing.emulator(racingcarNames, racingAttemptNumber);
     }
 }
