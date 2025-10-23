@@ -26,7 +26,7 @@ public class RacingController {
         output.requestAttemptNumber();
         String racingAttemptNumberString = input.getInput();
 
-        // input의 유효성검사
+        // input 유효성 검사 실행
         InputValidator inputValidator = new InputValidator();
         List<Car> racingcarNames = inputValidator.racingcars(racingcarNameInput);
         int racingAttemptNumber = inputValidator.attemptNumber(racingAttemptNumberString);

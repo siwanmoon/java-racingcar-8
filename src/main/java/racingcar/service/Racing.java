@@ -5,5 +5,5 @@ import racingcar.model.Car;
 
 public interface Racing {
 
-    void emulator(List<Car> racingcarNames, int racingAttemptNumber);
+    List<List<Car>> emulator(List<Car> racingcarNames, int racingAttemptNumber);
 }

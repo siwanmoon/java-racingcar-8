@@ -1,16 +1,12 @@
 package racingcar.common.constant;
 
-public enum Validator {
+public final class Validator {
 
-    RACINGCARNAME_REGEX("^[a-zA-Z]+$");
+    public static final String RACINGCAR_NAME_REGEX = "^[a-zA-Z]+$";
+    public static final Integer RACINGCAR_NAME_MAX_LENGTH = 5;
 
-    private final String constant;
+    // private 겍체 생성을 막음
+    private Validator() {
 
-    Validator(String constant) {
-        this.constant = constant;
-    }
-
-    public String getConstant() {
-        return constant;
     }
 }

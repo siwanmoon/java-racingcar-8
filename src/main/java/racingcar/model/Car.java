@@ -1,17 +1,30 @@
 package racingcar.model;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Objects;
+import static racingcar.common.constant.Validator.RACINGCAR_NAME_MAX_LENGTH;
+import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_LENGTH_OVERFLOW;
 
 public class Car {
 
     private final String carName;
-    private final int position;
+    private int position;
 
     public Car(String carName, int position) {
+
+        if(carName.length() > RACINGCAR_NAME_MAX_LENGTH) {
+            throw new IllegalArgumentException(RACINGCAR_NAME_LENGTH_OVERFLOW.getMessage());
+        }
+
         this.carName = carName;
         this.position = 0;
     }
 
+    public void tryMoveForward() {
+        this.position++;
+    }
+
+    // test코드를 위해 Car객체에 대한 equal의 개념을 재정의
     @Override
     public boolean equals(Object o) {
 

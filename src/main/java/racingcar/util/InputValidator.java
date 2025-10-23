@@ -5,12 +5,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import static racingcar.common.constant.Validator.RACINGCARNAME_REGEX;
+import static racingcar.common.constant.Validator.RACINGCAR_NAME_REGEX;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_ATTEMPT_BLANK;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_BLANCK;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_NOT_ENGLISH;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_NOT_UNIQUE;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_ATTEMPT_NOT_NUBER;
+
+import racingcar.common.constant.Validator;
 import racingcar.model.Car;
 
 public class InputValidator {
@@ -30,7 +32,7 @@ public class InputValidator {
                 throw new IllegalArgumentException(RACINGCAR_NAME_BLANCK.getMessage());
             }
 
-            if (!racingcarName.matches(RACINGCARNAME_REGEX.getConstant())) {
+            if (!racingcarName.matches(Validator.RACINGCAR_NAME_REGEX)) {
                 throw new IllegalArgumentException(RACINGCAR_NAME_NOT_ENGLISH.getMessage());
             }
 

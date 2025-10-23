@@ -7,7 +7,7 @@ import racingcar.service.Racing;
 public class RacingImpl implements Racing {
 
     @Override
-    public void emulator(List<Car> racingcarNames, int racingAttemptNumber) {
+    public List<List<Car>> emulator(List<Car> racingcarNames, int racingAttemptNumber) {
         ;
     }
 }
