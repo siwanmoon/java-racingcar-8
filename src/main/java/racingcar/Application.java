@@ -1,8 +1,6 @@
 package racingcar;
 
 import racingcar.controller.RacingController;
-import racingcar.service.Racing;
-import racingcar.service.impl.RacingImpl;
 import racingcar.view.Input;
 import racingcar.view.Output;
 
@@ -11,8 +9,7 @@ public class Application {
 
         Input input = new Input();
         Output output = new Output();
-        Racing racingService = new RacingImpl();
-        RacingController racingController = new RacingController(input, output, racingService);
+        RacingController racingController = new RacingController(input, output);
 
         racingController.run();
     }

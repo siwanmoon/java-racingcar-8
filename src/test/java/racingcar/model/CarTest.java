@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_LENGTH_OVERFLOW;
+import static racingcar.common.constant.RacingGameService.MINIMUM_MOVE_VALUE;
+import static racingcar.common.constant.RacingGameService.RANDOM_NUMBER_MIN;
 
 public class CarTest {
 
@@ -31,15 +33,15 @@ public class CarTest {
         int test3CarStartPosition = 12345;
         int test1CarResultPosition = 1;
         int test2CarResultPosition = 101;
-        int test3CarResultPosition = 12346;
+        int test3CarResultPosition = 12345;
 
         Car car1 = new Car(testCarname, test1CarStartPosition);
         Car car2 = new Car(testCarname, test2CarStartPosition);
         Car car3 = new Car(testCarname, test3CarStartPosition);
 
-        car1.moveForward();
-        car2.moveForward();
-        car3.moveForward();
+        car1.tryMoveForward(MINIMUM_MOVE_VALUE);
+        car2.tryMoveForward(MINIMUM_MOVE_VALUE);
+        car3.tryMoveForward(RANDOM_NUMBER_MIN);
 
         assertEquals(new Car(testCarname, test1CarResultPosition), car1);
         assertEquals(new Car(testCarname, test2CarResultPosition), car2);

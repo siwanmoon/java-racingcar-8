@@ -1,7 +1,7 @@
 package racingcar.model;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Objects;
+import static racingcar.common.constant.RacingGameService.MINIMUM_MOVE_VALUE;
 import static racingcar.common.constant.Validator.RACINGCAR_NAME_MAX_LENGTH;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_LENGTH_OVERFLOW;
 
@@ -17,14 +17,28 @@ public class Car {
         }
 
         this.carName = carName;
-        this.position = 0;
+        this.position = position;
     }
 
-    public void tryMoveForward() {
-        this.position++;
+    public void tryMoveForward(int inputNumber) {
+        if (inputNumber >= MINIMUM_MOVE_VALUE) {
+            position++;
+        }
     }
 
-    // test코드를 위해 Car객체에 대한 equal의 개념을 재정의
+    public String getCarName() {
+        return carName;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public boolean isPositionGreaterOrEqualThan(int base) {
+        return position >= base;
+    }
+
+    // Car객체에 대한 equal의 개념을 재정의
     @Override
     public boolean equals(Object o) {
 

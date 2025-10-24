@@ -2,7 +2,7 @@
 
 ## 구현 기능
 - [X] 자동차 이름을 입력받아 자동차 객체를 생성
-- [ ] 1회마다 자동차를 전진 or 멈춤 
+- [X] 1회마다 자동차를 전진 or 멈춤 
 
     0 - 9까지의 랜덤값을 받은 후 4 이상일 시 전진
 - [ ] 차수별 실행 결과 출력
@@ -28,11 +28,12 @@
 
 ### [Common]
 
+- `RacingGameService` : `Service`에서 사용하는 상수들을 모아놓은 객체
 - `Validator` : 입력값을 검증할 때 사용하는 상수들을 모아놓은 객체
-
+- 
 
 - `ErrorMessage` : 에러발생시 사용되는 메세지들을 상수화 하여 모아놓은 객체
-- `ViewMessage` : Output에서 사용되는 메세지들을 상수화 하여 모아놓은 객체
+- `ViewMessage` : `Output`에서 사용되는 메세지들을 상수화 하여 모아놓은 객체
 
 
 ### [Controller]
@@ -42,13 +43,17 @@
 
 ### [Model]
 
+- `RaceParticipants` : 경주할 자동차 객체의 `List`를 감싼 일급컬렉션 객체
+
+
 - `Car` : 자동차의 상태(이름, 위치)와 행위(전진)를 가지는 객체. 생성 시 이름 유효성 검사를 수행
+- `CarDto` : `Car`의 데이터 전송 객체
 
 
 ### [Service]
 
-- `Racing` : 
-- `RacingImpl` : 
+- `Racing` : 자동차 경주를 진행하는 인터페이스
+- `RacingImpl` : `Racing` 객체의 구현체
 
 
 ### [Util]
@@ -61,4 +66,4 @@
 - `Input` : 사용자의 입력을 받는 객체
 - `Output` : 프로그램의 출력을 담당하는 객체
 
-`Application` : 
+`Application` : 프로그램을 실행하는 객체

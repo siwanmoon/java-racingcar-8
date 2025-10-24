@@ -11,13 +11,11 @@ import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_BLANCK;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_NOT_ENGLISH;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_NOT_UNIQUE;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_ATTEMPT_NOT_NUBER;
-
-import racingcar.common.constant.Validator;
 import racingcar.model.Car;
 
 public class InputValidator {
 
-    public List<Car> racingcars (String input) {
+    public static List<Car> racingcars (String input) {
         List<String> racingcarNames = Arrays.stream(input.split(",")).map(String::trim).toList();
         List<Car> racingcars = new ArrayList<>();
 
@@ -32,7 +30,7 @@ public class InputValidator {
                 throw new IllegalArgumentException(RACINGCAR_NAME_BLANCK.getMessage());
             }
 
-            if (!racingcarName.matches(Validator.RACINGCAR_NAME_REGEX)) {
+            if (!racingcarName.matches(RACINGCAR_NAME_REGEX)) {
                 throw new IllegalArgumentException(RACINGCAR_NAME_NOT_ENGLISH.getMessage());
             }
 
@@ -42,7 +40,7 @@ public class InputValidator {
         return racingcars;
     }
 
-    public int attemptNumber (String input) {
+    public static int attemptNumber (String input) {
 
         int inputInteger;
 
