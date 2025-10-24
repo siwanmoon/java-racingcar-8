@@ -1,10 +1,10 @@
 package racingcar.model.service;
 
-import java.util.List;
-import racingcar.model.Car;
+import racingcar.model.RoundResultDto;
 
 public interface RacingGame {
 
     Boolean notFinished();
     void playOneRound();
+    RoundResultDto getRoundResult();
 }

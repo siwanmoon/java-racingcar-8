@@ -1,9 +1,10 @@
 package racingcar.model.firstclasscollection;
 
 import java.util.List;
-import static racingcar.common.constant.RacingGameService.FINISHLINE_POSITION;
+import static racingcar.common.constant.RacingGameStrategy.FINISHLINE_POSITION;
 import java.util.function.Supplier;
 import racingcar.model.Car;
+import racingcar.model.CarDto;
 
 public class RaceParticipants {
 
@@ -22,5 +23,9 @@ public class RaceParticipants {
         for (Car participants : raceParticipants) {
             participants.tryMoveForward(moveStrategy.get());
         }
+    }
+
+    public List<CarDto> getRoundResult() {
+        return raceParticipants.stream().map(CarDto :: from).toList();
     }
 }

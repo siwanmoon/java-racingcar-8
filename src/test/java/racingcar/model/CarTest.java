@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_LENGTH_OVERFLOW;
-import static racingcar.common.constant.RacingGameService.MINIMUM_MOVE_VALUE;
-import static racingcar.common.constant.RacingGameService.RANDOM_NUMBER_MIN;
+import static racingcar.common.constant.RacingGameStrategy.MINIMUM_MOVE_VALUE;
+import static racingcar.common.constant.RacingGameStrategy.RANDOM_NUMBER_MIN;
 
 public class CarTest {
 

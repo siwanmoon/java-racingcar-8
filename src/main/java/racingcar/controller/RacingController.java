@@ -1,8 +1,8 @@
 package racingcar.controller;
 
 import java.util.List;
-
 import racingcar.model.Car;
+import racingcar.model.RoundResultDto;
 import racingcar.model.service.RacingGame;
 import racingcar.model.service.impl.RacingGameImpl;
 import racingcar.util.InputValidator;
@@ -20,10 +20,10 @@ public class RacingController {
     }
 
     public void run() {
-        List<Car> racingcars = requestCarNames();
+        List<Car> raceParticipants = requestCarNames();
         int attemptNumbr = requestAttemptNuber();
 
-        RacingGame racingGame = new RacingGameImpl(racingcars, attemptNumbr);
+        RacingGame racingGame = new RacingGameImpl(raceParticipants, attemptNumbr);
         startRacing(racingGame);
     }
 
@@ -40,8 +40,13 @@ public class RacingController {
     }
 
     private void startRacing(RacingGame racingGame) {
+        output.startPrintingResult();
+
         while(racingGame.notFinished()) {
             racingGame.playOneRound();
+
+            RoundResultDto currentResult = racingGame.getRoundResult();
+            output.printRoundResult(currentResult);
         }
     }
 }

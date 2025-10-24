@@ -1,7 +1,7 @@
 package racingcar.model;
 
 import java.util.Objects;
-import static racingcar.common.constant.RacingGameService.MINIMUM_MOVE_VALUE;
+import static racingcar.common.constant.RacingGameStrategy.MINIMUM_MOVE_VALUE;
 import static racingcar.common.constant.Validator.RACINGCAR_NAME_MAX_LENGTH;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_LENGTH_OVERFLOW;
 
