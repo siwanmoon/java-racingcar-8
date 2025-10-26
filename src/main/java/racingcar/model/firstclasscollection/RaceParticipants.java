@@ -25,7 +25,17 @@ public class RaceParticipants {
         }
     }
 
-    public List<CarDto> getRoundResult() {
-        return raceParticipants.stream().map(CarDto :: from).toList();
+    public List<CarDto> getParticipantsDto() {
+        return raceParticipants.stream().map(CarDto::from).toList();
+    }
+
+    public List<CarDto> getRoundWinnersDto() {
+        int winnerPosition = raceParticipants.stream().mapToInt(Car::getPosition).max().orElse(0);
+        List<CarDto> winners = raceParticipants.stream()
+                .filter(car -> car.getPosition() == winnerPosition)
+                .map(CarDto::from)
+                .toList();
+
+        return winners;
     }
 }

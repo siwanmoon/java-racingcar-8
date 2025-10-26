@@ -7,7 +7,8 @@ public enum ViewMessage {
     EXECUTION_RESULT_MESSAGE("실행 결과"),
     FINAL_WINNER_MESSAGE("최종 우승자 : "),
     NAME_RESULT_SEPARATOR(" : "),
-    DISTANCE_UNIT("-");
+    DISTANCE_UNIT("-"),
+    WINNER_SEPARATOR(", ");
 
     private final String message;
 

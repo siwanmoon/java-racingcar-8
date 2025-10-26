@@ -6,6 +6,6 @@ import racingcar.model.firstclasscollection.RaceParticipants;
 public record RoundResultDto(List<CarDto> participantsDto) {
 
     public static RoundResultDto from(RaceParticipants raceParticipants) {
-        return new RoundResultDto(raceParticipants.getRoundResult());
+        return new RoundResultDto(raceParticipants.getParticipantsDto());
     }
 }

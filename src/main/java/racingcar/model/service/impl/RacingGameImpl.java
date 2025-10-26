@@ -38,7 +38,12 @@ public class RacingGameImpl implements RacingGame {
     };
 
     @Override
-    public RoundResultDto getRoundResult() {
+    public RoundResultDto getRoundResultDto() {
         return RoundResultDto.from(raceParticipants);
+    }
+
+    @Override
+    public RoundResultDto getRoundWinnerResultDto() {
+       return new RoundResultDto(raceParticipants.getRoundWinnersDto());
     }
 }

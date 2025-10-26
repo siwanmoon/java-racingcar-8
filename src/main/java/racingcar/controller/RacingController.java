@@ -40,13 +40,16 @@ public class RacingController {
     }
 
     private void startRacing(RacingGame racingGame) {
-        output.startPrintingResult();
+        output.startPrintingRoundResult();
 
         while(racingGame.notFinished()) {
             racingGame.playOneRound();
 
-            RoundResultDto currentResult = racingGame.getRoundResult();
+            RoundResultDto currentResult = racingGame.getRoundResultDto();
             output.printRoundResult(currentResult);
         }
+
+        output.startPrintingFinalWinner();
+        output.printFinalWinners(racingGame.getRoundWinnerResultDto());
     }
 }

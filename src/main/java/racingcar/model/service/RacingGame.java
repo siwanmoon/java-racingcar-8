@@ -6,5 +6,6 @@ public interface RacingGame {
 
     Boolean notFinished();
     void playOneRound();
-    RoundResultDto getRoundResult();
+    RoundResultDto getRoundResultDto();
+    RoundResultDto getRoundWinnerResultDto();
 }
