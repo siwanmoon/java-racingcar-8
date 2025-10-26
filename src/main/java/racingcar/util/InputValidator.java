@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import static racingcar.common.constant.RacingGameStrategy.STARTLINE_POSITION;
 import static racingcar.common.constant.Validator.MIN_ATTEMPT_AMOUNT;
 import static racingcar.common.constant.Validator.RACINGCAR_NAME_REGEX;
 import static racingcar.common.constant.Validator.MIN_RACINGCAR_AMOUNT;
@@ -39,7 +41,7 @@ public class InputValidator {
                 throw new IllegalArgumentException(RACINGCAR_NAME_NOT_ENGLISH.getMessage());
             }
 
-            racingcars.add(new Car(racingcarName, 0));
+            racingcars.add(new Car(racingcarName, STARTLINE_POSITION));
         }
 
         if (racingcars.size() < MIN_RACINGCAR_AMOUNT) {

@@ -1,5 +1,9 @@
 package racingcar.view;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import racingcar.model.CarDto;
+import racingcar.model.RaceParticipantsDto;
 import static racingcar.common.message.ViewMessage.EXECUTION_RESULT_MESSAGE;
 import static racingcar.common.message.ViewMessage.REQUEST_RACINGCAR_MESSAGE;
 import static racingcar.common.message.ViewMessage.REQUEST_ATTEMPT_NUMBER_MESSAGE;
@@ -7,10 +11,6 @@ import static racingcar.common.message.ViewMessage.NAME_RESULT_SEPARATOR;
 import static racingcar.common.message.ViewMessage.DISTANCE_UNIT;
 import static racingcar.common.message.ViewMessage.FINAL_WINNER_MESSAGE;
 import static racingcar.common.message.ViewMessage.WINNER_SEPARATOR;
-import java.util.List;
-import java.util.stream.Collectors;
-import racingcar.model.CarDto;
-import racingcar.model.RaceParticipantsDto;
 
 public class OutputView {
 

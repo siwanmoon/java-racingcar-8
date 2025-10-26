@@ -7,7 +7,6 @@ public final class Validator {
     public static final int MIN_RACINGCAR_AMOUNT = 2;
     public static final int MIN_ATTEMPT_AMOUNT = 1;
 
-    // private 겍체 생성을 막음
     private Validator() {
 
     }
