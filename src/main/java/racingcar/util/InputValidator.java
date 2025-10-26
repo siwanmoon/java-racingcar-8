@@ -21,7 +21,7 @@ import racingcar.model.Car;
 public class InputValidator {
 
     public static List<Car> racingcars (String input) {
-        List<String> racingcarNames = Arrays.stream(input.split(",")).map(String::trim).toList();
+        List<String> racingcarNames = Arrays.stream(input.split(",", -1)).map(String::trim).toList();
         List<Car> racingcars = new ArrayList<>();
 
         Set<String> uniqueRacingcarNames = new HashSet<>(racingcarNames);
