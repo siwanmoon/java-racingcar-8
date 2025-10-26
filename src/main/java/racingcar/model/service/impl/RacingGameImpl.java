@@ -1,10 +1,7 @@
 package racingcar.model.service.impl;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
-import java.util.function.Supplier;
-import static racingcar.common.constant.RacingGameStrategy.RANDOM_NUMBER_MAX;
-import static racingcar.common.constant.RacingGameStrategy.RANDOM_NUMBER_MIN;
+import static racingcar.common.constant.RacingGameStrategy.moveStrategy;
 import racingcar.model.Car;
 import racingcar.model.RaceParticipantsDto;
 import racingcar.model.firstclasscollection.RaceParticipants;
@@ -14,8 +11,6 @@ public class RacingGameImpl implements RacingGame {
 
     private final RaceParticipants raceParticipants;
     private int remainingAttempt;
-    private final Supplier<Integer> moveStrategy =
-            () -> Randoms.pickNumberInRange(RANDOM_NUMBER_MIN, RANDOM_NUMBER_MAX);
 
     public RacingGameImpl(List<Car> racingcars, int remainingAttempt) {
         this.raceParticipants = new RaceParticipants(racingcars);

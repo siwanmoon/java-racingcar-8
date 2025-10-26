@@ -10,6 +10,7 @@ import static racingcar.common.constant.RacingGameStrategy.STARTLINE_POSITION;
 import static racingcar.common.constant.Validator.MIN_ATTEMPT_AMOUNT;
 import static racingcar.common.constant.Validator.RACINGCAR_NAME_REGEX;
 import static racingcar.common.constant.Validator.MIN_RACINGCAR_AMOUNT;
+import static racingcar.common.constant.Validator.RACINGCAR_NAME_SEPARATOR;
 import static racingcar.common.message.ErrorMessage.ATTEMPT_NOT_POSITIVE_NUMBER;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_ATTEMPT_BLANK;
 import static racingcar.common.message.ErrorMessage.RACINGCAR_NAME_BLANCK;
@@ -23,7 +24,8 @@ import racingcar.model.Car;
 public class InputValidator {
 
     public static List<Car> racingcars (String input) {
-        List<String> racingcarNames = Arrays.stream(input.split(",", -1)).map(String::trim).toList();
+        List<String> racingcarNames = Arrays.stream(input.split(RACINGCAR_NAME_SEPARATOR, -1))
+                .map(String::trim).toList();
         List<Car> racingcars = new ArrayList<>();
 
         Set<String> uniqueRacingcarNames = new HashSet<>(racingcarNames);
