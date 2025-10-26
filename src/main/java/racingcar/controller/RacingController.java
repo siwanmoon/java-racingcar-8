@@ -2,7 +2,7 @@ package racingcar.controller;
 
 import java.util.List;
 import racingcar.model.Car;
-import racingcar.model.RoundResultDto;
+import racingcar.model.RaceParticipantsDto;
 import racingcar.model.service.RacingGame;
 import racingcar.model.service.impl.RacingGameImpl;
 import racingcar.util.InputValidator;
@@ -24,7 +24,9 @@ public class RacingController {
         int attemptNumbr = requestAttemptNuber();
 
         RacingGame racingGame = new RacingGameImpl(raceParticipants, attemptNumbr);
-        startRacing(racingGame);
+        RaceParticipantsDto raceWinnerDto = startRacing(racingGame);
+
+        printWinner(raceWinnerDto);
     }
 
     private List<Car> requestCarNames() {
@@ -39,17 +41,21 @@ public class RacingController {
         return InputValidator.attemptNumber(attemptNumberInput);
     }
 
-    private void startRacing(RacingGame racingGame) {
+    private RaceParticipantsDto startRacing(RacingGame racingGame) {
         outputView.startPrintingRoundResult();
 
         while(racingGame.notFinished()) {
             racingGame.playOneRound();
 
-            RoundResultDto currentResult = racingGame.getRoundResultDto();
+            RaceParticipantsDto currentResult = racingGame.getRoundResultDto();
             outputView.printRoundResult(currentResult);
         }
 
+        return racingGame.getRoundWinnerResultDto();
+    }
+
+    private void printWinner(RaceParticipantsDto raceWinnerDto) {
         outputView.startPrintingFinalWinner();
-        outputView.printFinalWinners(racingGame.getRoundWinnerResultDto());
+        outputView.printFinalWinners(raceWinnerDto);
     }
 }

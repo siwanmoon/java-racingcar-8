@@ -1,11 +1,11 @@
 package racingcar.model.service;
 
-import racingcar.model.RoundResultDto;
+import racingcar.model.RaceParticipantsDto;
 
 public interface RacingGame {
 
     Boolean notFinished();
     void playOneRound();
-    RoundResultDto getRoundResultDto();
-    RoundResultDto getRoundWinnerResultDto();
+    RaceParticipantsDto getRoundResultDto();
+    RaceParticipantsDto getRoundWinnerResultDto();
 }

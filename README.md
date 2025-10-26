@@ -48,7 +48,7 @@
 
 - `Car` : 자동차의 상태(이름, 위치)와 행위(전진)를 가지는 객체. 생성 시 이름 유효성 검사를 수행
 - `CarDto` : `Car`의 데이터 전송 객체
-- `RoundResultDto`
+- `RaceParticipantsDto` : `RaceParticipants`의 데이터 전송 객체 
 
 
 ### [Service]

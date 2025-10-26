@@ -10,7 +10,7 @@ import static racingcar.common.message.ViewMessage.WINNER_SEPARATOR;
 import java.util.List;
 import java.util.stream.Collectors;
 import racingcar.model.CarDto;
-import racingcar.model.RoundResultDto;
+import racingcar.model.RaceParticipantsDto;
 
 public class OutputView {
 
@@ -26,7 +26,7 @@ public class OutputView {
         System.out.println(EXECUTION_RESULT_MESSAGE.getMessage());
     }
 
-    public void printRoundResult(RoundResultDto currentResult) {
+    public void printRoundResult(RaceParticipantsDto currentResult) {
         List<CarDto> participants = currentResult.participantsDto();
 
         for(CarDto participant : participants) {
@@ -41,7 +41,7 @@ public class OutputView {
         System.out.print(FINAL_WINNER_MESSAGE.getMessage());
     }
 
-    public void printFinalWinners(RoundResultDto finalWinnersResultDto) {
+    public void printFinalWinners(RaceParticipantsDto finalWinnersResultDto) {
         System.out.println(finalWinnersResultDto.participantsDto()
                 .stream()
                 .map(CarDto::carName)

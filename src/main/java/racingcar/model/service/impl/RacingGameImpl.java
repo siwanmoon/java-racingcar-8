@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 import static racingcar.common.constant.RacingGameStrategy.RANDOM_NUMBER_MAX;
 import static racingcar.common.constant.RacingGameStrategy.RANDOM_NUMBER_MIN;
 import racingcar.model.Car;
-import racingcar.model.RoundResultDto;
+import racingcar.model.RaceParticipantsDto;
 import racingcar.model.firstclasscollection.RaceParticipants;
 import racingcar.model.service.RacingGame;
 
@@ -38,12 +38,12 @@ public class RacingGameImpl implements RacingGame {
     };
 
     @Override
-    public RoundResultDto getRoundResultDto() {
-        return RoundResultDto.from(raceParticipants);
+    public RaceParticipantsDto getRoundResultDto() {
+        return RaceParticipantsDto.from(raceParticipants);
     }
 
     @Override
-    public RoundResultDto getRoundWinnerResultDto() {
-       return new RoundResultDto(raceParticipants.getRoundWinnersDto());
+    public RaceParticipantsDto getRoundWinnerResultDto() {
+       return new RaceParticipantsDto(raceParticipants.getRoundWinnersDto());
     }
 }
