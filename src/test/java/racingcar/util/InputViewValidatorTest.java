@@ -12,7 +12,7 @@ import static racingcar.common.message.ErrorMessage.RACINGCAR_ATTEMPT_NOT_NUBER;
 
 import racingcar.model.Car;
 
-public class InputValidatorTest {
+public class InputViewValidatorTest {
 
     @Test
     void 자동차이름_중복입력_테스트() {

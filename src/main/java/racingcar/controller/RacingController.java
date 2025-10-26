@@ -6,17 +6,17 @@ import racingcar.model.RoundResultDto;
 import racingcar.model.service.RacingGame;
 import racingcar.model.service.impl.RacingGameImpl;
 import racingcar.util.InputValidator;
-import racingcar.view.Input;
-import racingcar.view.Output;
+import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
 public class RacingController {
 
-    private final Input input;
-    private final Output output;
+    private final InputView inputView;
+    private final OutputView outputView;
 
-    public RacingController(Input input, Output output) {
-        this.input = input;
-        this.output = output;
+    public RacingController(InputView inputView, OutputView outputView) {
+        this.inputView = inputView;
+        this.outputView = outputView;
     }
 
     public void run() {
@@ -28,28 +28,28 @@ public class RacingController {
     }
 
     private List<Car> requestCarNames() {
-        output.requestRacingcarName();
-        String carNamesInput = input.getInput();
+        outputView.requestRacingcarName();
+        String carNamesInput = inputView.getInput();
         return InputValidator.racingcars(carNamesInput);
     }
 
     private int requestAttemptNuber() {
-        output.requestAttemptNumber();
-        String attemptNumberInput = input.getInput();
+        outputView.requestAttemptNumber();
+        String attemptNumberInput = inputView.getInput();
         return InputValidator.attemptNumber(attemptNumberInput);
     }
 
     private void startRacing(RacingGame racingGame) {
-        output.startPrintingRoundResult();
+        outputView.startPrintingRoundResult();
 
         while(racingGame.notFinished()) {
             racingGame.playOneRound();
 
             RoundResultDto currentResult = racingGame.getRoundResultDto();
-            output.printRoundResult(currentResult);
+            outputView.printRoundResult(currentResult);
         }
 
-        output.startPrintingFinalWinner();
-        output.printFinalWinners(racingGame.getRoundWinnerResultDto());
+        outputView.startPrintingFinalWinner();
+        outputView.printFinalWinners(racingGame.getRoundWinnerResultDto());
     }
 }

@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import racingcar.model.CarDto;
 import racingcar.model.RoundResultDto;
 
-public class Output {
+public class OutputView {
 
     public void requestRacingcarName() {
         System.out.println(REQUEST_RACINGCAR_MESSAGE.getMessage());
