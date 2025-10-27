@@ -30,7 +30,7 @@
 
 - `RacingGameStrategy` : 경기 규칙에서 사용하는 상수들을 모아놓은 객체
 - `Validator` : 입력값을 검증할 때 사용하는 상수들을 모아놓은 객체
-- 
+
 
 - `ErrorMessage` : 에러발생시 사용되는 메세지들을 상수화 하여 모아놓은 객체
 - `ViewMessage` : `Output`에서 사용되는 메세지들을 상수화 하여 모아놓은 객체
